@@ -13,7 +13,7 @@ const NavbarComp=()=>{
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='me-auto'>
                         <Link href ="/signup" passHref>
-                            SignUp
+                            SignUp  
                         </Link>
                         <Link href ="/login" passHref>
                             Login

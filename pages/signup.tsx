@@ -21,7 +21,7 @@ const SignUp =() => {
             }
         }>
 
-            <h1 className="text-center my-3">Login</h1>
+            <h1 className="text-center my-3">Sign Up</h1>
             <Form onSubmit = {handleLogin}>
                 <Form.Group className='mb-3'
                 controlId='formBasicEmail'>
