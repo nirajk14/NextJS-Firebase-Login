@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
 import  {Button,Form } from 'react-bootstrap'
+import { useAuth } from '../context/AuthContext'
 
 const SignUp =() => {
+    const { user,signup } = useAuth()
+    console.log(user)
     const[data,setData]=useState({
         email: '',
         password: '',
         confirmpassword: '',
     })
 
-    const handleLogin = (e:any) => {
+    const handleSignup = async (e:any) => {
         e.preventDefault()
+
+        try {
+            await signup(data.email,data.password)
+        } catch (error) {
+            console.log(error)
+            
+        }
+
         console.log(data)
     }
 
@@ -22,7 +33,7 @@ const SignUp =() => {
         }>
 
             <h1 className="text-center my-3">Sign Up</h1>
-            <Form onSubmit = {handleLogin}>
+            <Form onSubmit = {handleSignup}>
                 <Form.Group className='mb-3'
                 controlId='formBasicEmail'>
                     <Form.Label>Email</Form.Label>
@@ -53,7 +64,7 @@ const SignUp =() => {
                     type='password'
                     placeholder='Enter your password'/>
                 </Form.Group>
-                <Form.Group className='mb-3'
+                {/* <Form.Group className='mb-3'
                 controlId='formBasicPassword'>
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
@@ -66,7 +77,7 @@ const SignUp =() => {
                     required
                     type='password'
                     placeholder='Confirm your password'/>
-                </Form.Group>
+                </Form.Group> */}
                 <Button variant='primary' type='submit'>
                     Login
                 </Button>
