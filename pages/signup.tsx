@@ -8,7 +8,6 @@ const SignUp =() => {
     const[data,setData]=useState({
         email: '',
         password: '',
-        confirmpassword: '',
     })
 
     const handleSignup = async (e:any) => {
